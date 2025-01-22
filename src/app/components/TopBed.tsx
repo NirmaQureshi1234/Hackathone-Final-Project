@@ -33,7 +33,7 @@ const TopBeds = () => {
         const query = `*[_type == "product" && category == "Bed"]`; // Adjust query if necessary
         const products = await client.fetch(query);
 
-        console.log('Fetched Products:', products); // Log to check the structure
+        console.log("Fetched Products:", products); // Log to check the structure
 
         if (products.length > 0) {
           setBeds(products); // Set the beds data to state
@@ -80,7 +80,9 @@ const TopBeds = () => {
             <div key={bed._id} className="bg-[#FAF4F4] rounded-md p-4">
               {/* If image field is a Sanity image object, use `urlFor()` to get the image URL */}
               <Image
-                src={bed.image ? urlFor(bed.image).url() : "/fallback-image.jpg"} // Use urlFor() if image is an object
+                src={
+                  bed.image ? urlFor(bed.image).url() : "/fallback-image.jpg"
+                } // Use urlFor() if image is an object
                 alt={bed.name}
                 className="w-full rounded-lg"
                 width={287}

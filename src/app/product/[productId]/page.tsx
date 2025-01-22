@@ -124,8 +124,6 @@ export default function ProductPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 py-10">
-       
-
         <div className="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-6">
           {/* Product Image */}
           <div>
@@ -139,7 +137,7 @@ export default function ProductPage() {
           </div>
 
           {/* Product Details */}
-          
+
           <div className="flex-1">
             <h1 className="text-3xl font-bold">{product.name}</h1>
             <p className="mt-4">{product.description}</p>
@@ -166,10 +164,10 @@ export default function ProductPage() {
                 </div>
               </div>
             )}
-  {/* Size Options */}
-             <div className="flex items-center mt-6 space-x-4">
-             <span className="font-semibold">Size:</span>
-            {["L", "XL", "XS"].map((size) => (
+            {/* Size Options */}
+            <div className="flex items-center mt-6 space-x-4">
+              <span className="font-semibold">Size:</span>
+              {["L", "XL", "XS"].map((size) => (
                 <button
                   key={size}
                   className="px-4 py-2 border rounded-lg hover:bg-gray-100 focus:outline-none"
@@ -197,14 +195,9 @@ export default function ProductPage() {
               className="mt-6 bg-black text-white px-6 py-3 rounded-lg"
             >
               Add to Cart
-            </button> 
-            {/* <button
-              onClick={() => window.history.back()}
-              className="ml-7 mt-6 bg-black text-white px-6 py-3 rounded-lg"
-            >
-              Back To Home
-            </button> */}
-             <BackButton />
+            </button>
+
+            <BackButton />
           </div>
         </div>
       </div>
@@ -262,17 +255,3 @@ export default function ProductPage() {
     </div>
   );
 }
-
-
-
-
-
-
- 
-
-
-
-
-
-
-

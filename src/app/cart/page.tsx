@@ -81,8 +81,8 @@ export default function ShopPage() {
                             <Image
                               src="/tp14.png"
                               alt="Asgaard sofa"
-                               width={300}
-                                height={300}
+                              width={300}
+                              height={300}
                               className="h-full w-full object-cover object-center"
                             />
                           </div>
@@ -131,13 +131,13 @@ export default function ShopPage() {
                       Rs. 250,000.00
                     </span>
                   </div>
-<Link href={"/checkout"}>
-                  <button
-                    className="w-full rounded-full border border-black py-3 text-black transition hover:bg-gray-800 hover:text-white"
-                    aria-label="Proceed to checkout"
-                  >
-                    Check Out
-                  </button>
+                  <Link href={"/checkout"}>
+                    <button
+                      className="w-full rounded-full border border-black py-3 text-black transition hover:bg-gray-800 hover:text-white"
+                      aria-label="Proceed to checkout"
+                    >
+                      Check Out
+                    </button>
                   </Link>
                 </div>
               </div>
@@ -184,20 +184,3 @@ export default function ShopPage() {
     </div>
   );
 }
-
-
-
-
-
-
-
- 
-
- 
-
-
-
-
-
-
-

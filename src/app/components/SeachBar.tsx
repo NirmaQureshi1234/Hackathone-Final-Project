@@ -10,19 +10,19 @@ interface SanityImage {
   _type: "image";
   asset: {
     _type: "reference";
-    _ref: string; 
+    _ref: string;
   };
   hotspot?: {
-    x: number; 
-    y: number; 
-    height: number; 
-    width: number; 
+    x: number;
+    y: number;
+    height: number;
+    width: number;
   };
   crop?: {
-    top: number; 
-    bottom: number; 
-    left: number; 
-    right: number; 
+    top: number;
+    bottom: number;
+    left: number;
+    right: number;
   };
 }
 

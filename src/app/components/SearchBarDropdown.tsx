@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface SearchBarDropdownProps {
   searchTerm: string;
@@ -31,7 +31,9 @@ const SearchBarDropdown: React.FC<SearchBarDropdownProps> = ({
       >
         <option value="  ">All Categories</option>
         {categories.map((category) => (
-          <option key={category} value={category}>{category}</option>
+          <option key={category} value={category}>
+            {category}
+          </option>
         ))}
       </select>
     </div>

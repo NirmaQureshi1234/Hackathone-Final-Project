@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { client } from "@/sanity/lib/client";
@@ -33,7 +33,7 @@ const TopPicks = () => {
         const query = `*[_type == "product" && category == "Chair"]`; // Adjust query if necessary
         const products = await client.fetch(query);
 
-        console.log('Fetched Products:', products); // Log to check the structure
+        console.log("Fetched Products:", products); // Log to check the structure
 
         if (products.length > 0) {
           setChairs(products); // Set the chairs data to state
@@ -67,7 +67,8 @@ const TopPicks = () => {
           Top Picks For You
         </p>
         <p className="text-[14px] md:text-[16px] text-[#9F9F9F] mt-2">
-          Find a bright ideal to suit your taste with our great selection of suspension, floor, and table lights.
+          Find a bright ideal to suit your taste with our great selection of
+          suspension, floor, and table lights.
         </p>
       </div>
 
@@ -80,7 +81,11 @@ const TopPicks = () => {
             <div key={chair._id} className="bg-[#FAF4F4] rounded-md p-4">
               {/* If image field is a Sanity image object, use `urlFor()` to get the image URL */}
               <Image
-                src={chair.image ? urlFor(chair.image).url() : "/fallback-image.jpg"} // Use urlFor() if image is an object
+                src={
+                  chair.image
+                    ? urlFor(chair.image).url()
+                    : "/fallback-image.jpg"
+                } // Use urlFor() if image is an object
                 alt={chair.name}
                 className="w-full rounded-lg"
                 width={287}
