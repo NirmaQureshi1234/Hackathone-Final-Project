@@ -7,10 +7,11 @@ import OurBlogs from "@/app/components/OurBlogs";
 import OurInstagram from "@/app/components/OurInstagram";
 
 
+
 function Home() {
   return (
     <>
-    
+  
       <Header />
       <Side />
       <TopPicks />

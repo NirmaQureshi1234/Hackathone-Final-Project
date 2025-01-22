@@ -1,21 +1,186 @@
+// "use client";
+
+// import { useState, useEffect } from "react";
+// import { usePathname } from "next/navigation";
+// import Link from "next/link";
+// import Image from "next/image";
+// import { Heart, Menu, Search, ShoppingCart, User, X } from "lucide-react";
+
+// export default function NavBar() {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [isMobile, setIsMobile] = useState(false);
+//   const pathname = usePathname();
+
+//   const bgColor = pathname === "/" ? "bg-[#FBEBB5]" : "bg-white";
+
+//   useEffect(() => {
+//     const checkIsMobile = () => {
+//       setIsMobile(window.innerWidth < 768);
+//       if (window.innerWidth >= 768) {
+//         setIsOpen(false);
+//       }
+//     };
+
+//     checkIsMobile();
+//     window.addEventListener("resize", checkIsMobile);
+
+//     return () => {
+//       window.removeEventListener("resize", checkIsMobile);
+//     };
+//   }, []);
+
+//   const toggleMenu = () => {
+//     setIsOpen(!isOpen);
+//   };
+
+//   return (
+//     <>
+//       <nav className={`${bgColor} font-poppins relative`}>
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="flex justify-between h-20">
+//             {/* Logo */}
+//             <div className="flex items-center">
+//               <Link href="/" className="flex-shrink-0">
+//                 <Image 
+//                   src="/minilogo.png" 
+//                   alt="Site Logo"
+//                   width={70} 
+//                   height={60} 
+//                   className="object-contain" 
+//                 />
+//               </Link>
+//             </div>
+
+//             {/* Desktop Navigation Links */}
+//             <div className="hidden md:flex md:items-center sm:space-x-8">
+//               <Link
+//                 href="/"
+//                 className="text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-semibold"
+//               >
+//                 Home
+//               </Link>
+//               <Link
+//                 href="/shop"
+//                 className="text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-semibold"
+//               >
+//                 Shop
+//               </Link>
+//               <Link
+//                 href="/blog"
+//                 className="text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-semibold"
+//               >
+//                 Blog
+//               </Link>
+//               <Link
+//                 href="/contact"
+//                 className="text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-semibold"
+//               >
+//                 Contact
+//               </Link>
+//             </div>
+
+//             {/* Icons */}
+//             <div className="hidden md:flex md:items-center sm:space-x-9">
+//               <Link href="/myAccount" className="text-gray-800 hover:text-gray-600">
+//                 <User size={22} />
+//               </Link>
+//               <button
+//                 className="text-gray-800 hover:text-gray-600"
+//                 onClick={() => alert("Search clicked")}
+//               >
+//                 <Search size={22} />
+//               </button>
+//               <button className="text-gray-800 hover:text-gray-600 relative">
+//                 <Heart size={22} />
+//                 <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+//                   0
+//                 </span>
+//               </button>
+//               <button className="text-gray-800 hover:text-gray-600 relative">
+//                 <ShoppingCart size={22} />
+//                 <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+//                   0
+//                 </span>
+//               </button>
+//             </div>
+
+//             {/* Mobile Menu Button */}
+//             <div className="flex items-center md:hidden">
+//               <button
+//                 onClick={toggleMenu}
+//                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
+//               >
+//                 {isOpen ? <X size={24} /> : <Menu size={24} />}
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Mobile Menu */}
+//         <div
+//           className={`${isOpen ? "absolute" : "hidden"} pt-12 md:hidden top-0 bg-white z-40 h-[10vh] w-[100%]`}
+//         >
+//           <div
+//             className="px-2 pt-2 pb-3 space-y-1 bg-white"
+//             onClick={toggleMenu}
+//           >
+//             <Link
+//               href="/"
+//               className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600"
+//             >
+//               Home
+//             </Link>
+//             <Link
+//               href="/shop"
+//               className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600"
+//             >
+//               Shop
+//             </Link>
+//             <Link
+//               href="/blog"
+//               className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600"
+//             >
+//               Blog
+//             </Link>
+//             <Link
+//               href="/contact"
+//               className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600"
+//             >
+//               Contact
+//             </Link>
+//           </div>
+//         </div>
+//       </nav>
+//     </>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation"; // Use this to get the current route
+import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Heart, Menu, Search, ShoppingCart, User, X } from "lucide-react";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const pathname = usePathname(); // Get the current route
+  const pathname = usePathname();
 
-  // Determine the background color based on the current route
   const bgColor = pathname === "/" ? "bg-[#FBEBB5]" : "bg-white";
 
   useEffect(() => {
     const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 768);
       if (window.innerWidth >= 768) {
         setIsOpen(false);
       }
@@ -34,101 +199,123 @@ export default function NavBar() {
   };
 
   return (
-    <nav className={`${bgColor} px-6 py-4 transition-colors duration-300`}>
-      <div className="flex items-center justify-between">
-        <div className="hidden md:flex space-x-14 items-center justify-center w-full">
-          <NavLinks />
-        </div>
-        <div className="flex items-center space-x-11 ">
-          <NavIcons />
-          {isMobile && (
-            <button className="p-2" onClick={toggleMenu}>
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          )}
-        </div>
-      </div>
+    <>
+      <nav className={`${bgColor} font-poppins relative`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-20">
+            {/* Logo */}
+            <div className="flex items-center">
+              <Link href="/" className="flex-shrink-0">
+                <Image 
+                  src="/minilogo.png" 
+                  alt="Site Logo"
+                  width={70} 
+                  height={60} 
+                  className="object-contain" 
+                />
+              </Link>
+            </div>
 
-      {/* Mobile Menu */}
-      {isMobile && (
-        <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isOpen ? "max-h-96" : "max-h-0"
-          }`}
-        >
-          <div className="pt-4 pb-2 space-y-2 text-center">
-            <NavLinks mobile />
+            {/* Desktop Navigation Links */}
+            <div className="hidden md:flex md:items-center sm:space-x-8">
+              <Link
+                href="/"
+                className="text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-semibold"
+              >
+                Home
+              </Link>
+              <Link
+                href="/shop"
+                className="text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-semibold"
+              >
+                Shop
+              </Link>
+              <Link
+                href="/blog"
+                className="text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-semibold"
+              >
+                Blog
+              </Link>
+              <Link
+                href="/contact"
+                className="text-gray-800 hover:text-gray-600 px-3 py-2 text-base font-semibold"
+              >
+                Contact
+              </Link>
+            </div>
+
+            {/* Icons */}
+            <div className="hidden md:flex md:items-center sm:space-x-9">
+              <Link href="/myAccount" className="text-gray-800 hover:text-gray-600">
+                <User size={22} />
+              </Link>
+              <button
+                className="text-gray-800 hover:text-gray-600"
+                onClick={() => alert("Search clicked")}
+              >
+                <Search size={22} />
+              </button>
+              <button className="text-gray-800 hover:text-gray-600 relative">
+                <Heart size={22} />
+                <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                  0
+                </span>
+              </button>
+              <button className="text-gray-800 hover:text-gray-600 relative">
+                <ShoppingCart size={22} />
+                <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                  0
+                </span>
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className="flex items-center md:hidden">
+              <button
+                onClick={toggleMenu}
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
+              >
+                {isOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
-      )}
-    </nav>
-  );
-}
 
-function NavLinks({ mobile = false }: { mobile?: boolean }) {
-  const linkClass = mobile
-    ? "block py-2 text-lg font-medium font-poppins"
-    : "text-sm font-medium text-center font-poppins";
-
-  return (
-    <>
-      <Link className={linkClass} href="/">
-        Home
-      </Link>
-      <Link className={linkClass} href="/shop">
-        Shop
-      </Link>
-      <Link className={linkClass} href="/singleProduct">
-        SingleProduct
-      </Link>
-      <Link className={linkClass} href="/blog">
-        Blog
-      </Link> 
-    
-      <Link className={linkClass} href="/contact">
-        Contact
-      </Link>
+        {/* Mobile Menu */}
+        <div
+          className={`${isOpen ? "absolute" : "hidden"} pt-12 md:hidden top-0 bg-white z-40 h-[10vh] w-[100%]`}
+        >
+          <div
+            className="px-2 pt-2 pb-3 space-y-1 bg-white"
+            onClick={toggleMenu}
+          >
+            <Link
+              href="/"
+              className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600"
+            >
+              Home
+            </Link>
+            <Link
+              href="/shop"
+              className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600"
+            >
+              Shop
+            </Link>
+            <Link
+              href="/blog"
+              className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/contact"
+              className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-gray-600"
+            >
+              Contact
+            </Link>
+          </div>
+        </div>
+      </nav>
     </>
   );
 }
-
-import { useRouter } from "next/navigation";
-
-function NavIcons() {
-  const router = useRouter();
-
-  return (
-    <>
-      <button className="p-2" onClick={() => router.push("/myAccount")}>
-        <User className="h-5 w-5" />
-        <span className="sr-only">Account</span>
-      </button>
-      <button className="p-2" onClick={() => router.push("/singleProduct")}>
-        <Search className="h-5 w-5" />
-        <span className="sr-only">Search</span>
-      </button>
-      <button className="p-2">
-        <Heart className="h-5 w-5" />
-        <span className="sr-only">Wishlist</span>
-      </button>
-      <button className="p-2" onClick={() => router.push("/cart")}>
-        <ShoppingCart className="h-5 w-5" />
-        <span className="sr-only">Cart</span>
-      </button>
-    </>
-  );
-}
-
- 
- 
-
-
-
- 
-
-
- 
-
- 
-  
-
