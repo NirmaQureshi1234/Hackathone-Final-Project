@@ -44,12 +44,6 @@ const ShopPage = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [selectedCategory, setSelectedCategory] = useState<string>("");
 
-  const addToCart = (e: React.MouseEvent) => {
-    e.preventDefault();
-    // Add your cart logic here
-    console.log("Added to cart");
-  };
-
   // Fetch products on component mount
   useEffect(() => {
     async function getProducts() {
